@@ -1,0 +1,71 @@
+@media only screen and (min-width: 768px) {
+  html {
+    overflow-y: scroll;
+  }
+}
+
+h2 {
+  &.post-title {
+    span {
+      &.small.text-success {
+        color:#3c763d !important;
+        font-size: 40% !important;
+        font-weight: 900 !important;
+      }
+    }
+  }
+}
+
+.margin-top-1em {
+  margin-top: 1em;
+}
+
+ol.breadcrumb {
+  font-size: 75%;
+  
+  a {
+    color: #0085a1 !important;
+  }
+}
+
+
+/* [ANIMATIONS] taken mainly from https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-animate-ui-view-with-ng-animate */
+body {
+  overflow-x: hidden;
+}
+[ui-view] {
+  &.ng-enter, &.ng-leave {
+    left: 0;
+    right: 0;
+    transition:all .35s ease-in;
+  }
+  
+  &.ng-enter {
+    opacity: 0;
+    transform:scale3d(0.35, 0.35, 0.35);
+  }
+  
+  &.ng-enter-active {
+    opacity: 1;
+    transform:scale3d(1, 1, 1);
+  }
+  
+  &.ng-leave {
+    opacity: 1;
+    transform:translate3d(0, 0, 0);
+  }
+  
+  &.ng-leave-active {
+    opacity: 0;
+    transform:translate3d(100px, 0, 0);
+  }
+}
+
+.show-title {
+  opacity: 1;
+  transition: opacity 0.35s ease-out;
+}
+.hide-default-title {
+  opacity: 0;
+}
+/* /[ANIMATIONS] */

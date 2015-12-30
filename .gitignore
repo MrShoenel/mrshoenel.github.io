@@ -1,0 +1,5 @@
+stab/*
+!stab/Gruntfile.js
+
+stab/resource/**/*.map
+!stab/resource
