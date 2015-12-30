@@ -2,6 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="post-meta">Posted by <a class="primary">{{ $uiStateData.article.meta.author }}</a> on {{ $uiStateData.article.meta.created | mrshMydate }}<span ng-if="$uiStateData.article.meta.lastMod"> and lastly updated on {{ $uiStateData.article.meta.lastMod | mrshMydate }}</span></p>
 				<div ng-if="!vm.useBindHtmlCompile" ng-bind-html="$uiStateData.article.asTrustedHtml"></div>
 				<div ng-if="vm.useBindHtmlCompile" bind-html-compile="$uiStateData.article.asTrustedHtml"></div>
 			</div>

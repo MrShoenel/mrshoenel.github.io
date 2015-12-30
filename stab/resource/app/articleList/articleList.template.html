@@ -18,7 +18,7 @@
 						<h3 ng-if="metaArticle.subtitle" class="post-subtitle">{{ metaArticle.subtitle }}</h3>
 					</a>
 					<p ng-if="metaArticle.teaser" class="post-teaser">{{ metaArticle.teaser }}</p>
-					<p class="post-meta">Posted by <a href="#">{{ metaArticle.author }}</a> on {{ metaArticle.created }}</p>
+					<p class="post-meta">Posted by <a href="#">{{ metaArticle.author }}</a> on {{ metaArticle.created | mrshMydate }}</p>
 				</div>
 				<hr ng-if="!$last" />
 			</div>
