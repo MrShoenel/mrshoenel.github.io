@@ -108,8 +108,8 @@ module Blog {
 							],
 							$uiStateData: [() => {
 								return {
-									title: 'mrshoenel.github.io',
-									defaultTitle: ''
+									title: '',
+									defaultTitle: 'mrshoenel.github.io'
 								}
 							}]
 						}
@@ -159,11 +159,11 @@ module Blog {
 							currentArticle: ['$stateParams', 'articleModule', 'ContentService', 'services', ($stateParams: angular.ui.IStateParamsService, articleModule: any, contentService: Service.ContentService, services: any) => {
 								return contentService.articleByUrlName($stateParams['articleUrlName']);
 							}],
-							$uiStateData: ['currentArticle', '$uiStateData', (currentArticle: Common.Article, $uiStateData: any) => {
+							$uiStateData: ['currentArticle', (currentArticle: Common.Article) => {
 								var am = currentArticle.meta, ho = (prop: string) => am.hasOwnProperty(prop),
 									stateData = {
 										article: currentArticle,
-										title: realDecodeURI(currentArticle.meta.title) + ' | ' + $uiStateData.title,
+										title: realDecodeURI(currentArticle.meta.title),
 										breadCrumb: realDecodeURI(currentArticle.meta.title),
 										meta: [
 											['last-modified', new Date(Date.parse(am.lastMod))['toGMTString']()]
@@ -200,9 +200,9 @@ module Blog {
 									'./script/app/articleList/articleList.directive.js'
 								]
 							}),
-							$uiStateData: ['$stateParams', '$uiStateData', ($stateParams: angular.ui.IStateParamsService, $uiStateData: any) => {
+							$uiStateData: ['$stateParams', ($stateParams: angular.ui.IStateParamsService) => {
 								return {
-									title: 'dir:/' + realDecodeURI($stateParams['listType']) + ' | ' + $uiStateData.title,
+									title: 'dir:/' + realDecodeURI($stateParams['listType']),
 									breadCrumb: 'dir:/' + realDecodeURI($stateParams['listType'])
 								};
 							}]
@@ -233,10 +233,10 @@ module Blog {
 									'./script/app/articleList/articleList.directive.js'
 								]
 							}),
-							$uiStateData: ['$location', '$uiStateData', ($location: angular.ILocationService, $uiStateData: any) => {
+							$uiStateData: ['$location', ($location: angular.ILocationService) => {
 								var q = $location.search()['q'];
 								return {
-									title: 'search' + (q ? ':' + q : '') + ' | ' + $uiStateData.title,
+									title: 'search' + (q ? ':' + q : ''),
 									breadCrumb: 'search'
 								};
 							}]

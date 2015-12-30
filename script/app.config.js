@@ -95,8 +95,8 @@ var Blog;
                             ],
                             $uiStateData: [function () {
                                     return {
-                                        title: 'mrshoenel.github.io',
-                                        defaultTitle: ''
+                                        title: '',
+                                        defaultTitle: 'mrshoenel.github.io'
                                     };
                                 }]
                         }
@@ -144,10 +144,10 @@ var Blog;
                             currentArticle: ['$stateParams', 'articleModule', 'ContentService', 'services', function ($stateParams, articleModule, contentService, services) {
                                     return contentService.articleByUrlName($stateParams['articleUrlName']);
                                 }],
-                            $uiStateData: ['currentArticle', '$uiStateData', function (currentArticle, $uiStateData) {
+                            $uiStateData: ['currentArticle', function (currentArticle) {
                                     var am = currentArticle.meta, ho = function (prop) { return am.hasOwnProperty(prop); }, stateData = {
                                         article: currentArticle,
-                                        title: realDecodeURI(currentArticle.meta.title) + ' | ' + $uiStateData.title,
+                                        title: realDecodeURI(currentArticle.meta.title),
                                         breadCrumb: realDecodeURI(currentArticle.meta.title),
                                         meta: [
                                             ['last-modified', new Date(Date.parse(am.lastMod))['toGMTString']()]
@@ -181,9 +181,9 @@ var Blog;
                                     './script/app/articleList/articleList.directive.js'
                                 ]
                             }); },
-                            $uiStateData: ['$stateParams', '$uiStateData', function ($stateParams, $uiStateData) {
+                            $uiStateData: ['$stateParams', function ($stateParams) {
                                     return {
-                                        title: 'dir:/' + realDecodeURI($stateParams['listType']) + ' | ' + $uiStateData.title,
+                                        title: 'dir:/' + realDecodeURI($stateParams['listType']),
                                         breadCrumb: 'dir:/' + realDecodeURI($stateParams['listType'])
                                     };
                                 }]
@@ -213,10 +213,10 @@ var Blog;
                                     './script/app/articleList/articleList.directive.js'
                                 ]
                             }); },
-                            $uiStateData: ['$location', '$uiStateData', function ($location, $uiStateData) {
+                            $uiStateData: ['$location', function ($location) {
                                     var q = $location.search()['q'];
                                     return {
-                                        title: 'search' + (q ? ':' + q : '') + ' | ' + $uiStateData.title,
+                                        title: 'search' + (q ? ':' + q : ''),
                                         breadCrumb: 'search'
                                     };
                                 }]
