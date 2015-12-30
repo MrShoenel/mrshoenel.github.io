@@ -11,6 +11,11 @@ nav.navbar.navbar-default {
   .intro-header .page-heading {
     padding: 126px 0;
   }
+  
+  div.site-heading h1.show-title {
+    overflow: hidden;
+    max-height: 176px; /* 80 * 1.1 * 2 = 2 lines */
+  }
 }
 
 .post-meta {
@@ -20,14 +25,21 @@ nav.navbar.navbar-default {
   margin-top: 0;
 }
 .post-meta > a {
-  text-decoration: none;
-  color: #404040;
+  text-decoration: none !important;
+  color: #337ab7 !important;
+  cursor: default !important;
+  /*color: #404040;*/
 }
 .post-meta > a:hover,
 .post-meta > a:focus {
+  background-color: #337ab7 !important;
+  color: #fff !important;
+}
+/*.post-meta > a:hover,
+.post-meta > a:focus {
   color: #0085a1;
   text-decoration: underline;
-}
+}*/
 
 @media only screen and (max-width: 767px) {
   header.intro-header {
@@ -39,6 +51,8 @@ nav.navbar.navbar-default {
 
   h1.show-title {
     word-wrap: break-word;
+    overflow: hidden;
+    max-height:115px; /* 50 * 1.1 * 3 = 3 lines */
   }
 }
 
