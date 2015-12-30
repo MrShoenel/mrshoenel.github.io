@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	"editor.tabSize": 2,
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+		"**/*.map": true,
+		"stab/resource/*.js": true,
+		"stab/resource/app/**/*.js": true,
+		"stab/resource/style/all.css": true,
+		".vscode": true,
+		"stab/node_modules": true
+	}
+}
