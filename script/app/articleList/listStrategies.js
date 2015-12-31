@@ -22,7 +22,7 @@ var Blog;
             }
             ListAllStrategy.prototype.itemsList = function (source) {
                 var x = this.reverse ? -1 : 1, y = this.reverse ? 1 : -1;
-                return source.sort(function (a, b) { return Date.parse(a.lastMod) < Date.parse(b.lastMod) ? x : y; });
+                return source.sort(function (a, b) { return Date.parse(a['created']) < Date.parse(b['created']) ? x : y; });
             };
             ;
             /**
