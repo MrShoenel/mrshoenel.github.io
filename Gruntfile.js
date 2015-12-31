@@ -43,11 +43,26 @@ module.exports = function(grunt) {
 		},
     
     exec: {
-      stabOptimized: {
+      stab: {
 				stdout: true,
 				stderr: true,
         cwd: process.cwd() + '/stab',
-				command: 'node_modules\\.bin\\grunt watch-all --optimize',
+				command: 'node_modules\\.bin\\grunt watch-all',
+				callback: function(error, stdout, stderr) {
+					if (error) {
+						console.error(error);
+						return;
+					}
+          
+          console.log(stdout);
+				}
+      },
+      
+      optimize: {
+        stdout: true,
+				stderr: true,
+        cwd: process.cwd() + '/stab',
+				command: 'node_modules\\.bin\\grunt optimize',
 				callback: function(error, stdout, stderr) {
 					if (error) {
 						console.error(error);
@@ -90,15 +105,17 @@ module.exports = function(grunt) {
 			options: { logConcurrentOutput: true },
 
       all: {
-        tasks: ['exec', 'watch']
+        tasks: ['exec:stab', 'exec:optimize', 'watch']
       },
-      initial: ['wait:five', 'clean', 'copy', 'wait:zeroDone']
+      initial: {
+        tasks: ['wait:five', 'clean', 'copy', 'wait:zeroDone']
+      }
     },
     
     watch: {
       all: {
         files: ['./stab/public/**/*.*'],
-        tasks: ['wait:pointFive', 'clean', 'copy', 'wait:zeroDone']
+        tasks: ['wait:pointFive', 'exec:optimize', 'clean', 'copy', 'wait:zeroDone']
       }
     }
 	});
