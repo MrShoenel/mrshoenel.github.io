@@ -1,0 +1,36 @@
+{
+  "name": "mrshoenel.github.io",
+  "version": "1.0.0",
+  "description": "This is where I blog.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrShoenel/mrshoenel.github.io.git"
+  },
+  "keywords": [
+    "Blogging",
+    "Stab"
+  ],
+  "author": "Sebastian Hönel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrShoenel/mrshoenel.github.io/issues"
+  },
+  "homepage": "https://github.com/MrShoenel/mrshoenel.github.io#readme",
+  "dependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.1.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6",
+    "grunt-wait": "^0.1.0",
+    "matchdep": "^1.0.0"
+  }
+}
