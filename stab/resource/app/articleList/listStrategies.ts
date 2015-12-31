@@ -12,7 +12,7 @@ module Blog.ArticleList {
 		
 		public itemsList(source: Common.MetaArticle[]): Common.MetaArticle[] {
 			var x = this.reverse ? -1 : 1, y = this.reverse ? 1 : -1;
-			return source.sort((a, b) => Date.parse(a.lastMod) < Date.parse(b.lastMod) ? x : y);	
+			return source.sort((a, b) => Date.parse(a['created']) < Date.parse(b['created']) ? x : y);	
 		};
 		
 		/**
