@@ -9,6 +9,9 @@ nav.navbar.navbar-default {
   h1.show-title {
     font-size: 70px !important;
   }
+  nav.navbar.navbar-default.navbar-custom.navbar-fixed-top a {
+    text-shadow: 1.5px 1.5px 1px rgba(0,0,0,.66);
+  }
 }
 
 p.post-meta {
