@@ -3,3 +3,5 @@ stab/*
 
 stab/resource/**/*.map
 !stab/resource
+
+node_modules
