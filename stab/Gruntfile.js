@@ -191,6 +191,7 @@ module.exports = function(grunt) {
 			default: {
 				cache: 1, // 0 will give us one hour so we'll do it this way
 				root: './public/',
+				host: '0.0.0.0',
 				port: parseInt(grunt.option('port')) || 80,
 				logFn: function() {} // no thanks
 			}
