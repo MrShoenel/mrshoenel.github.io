@@ -20,9 +20,9 @@ You probably recall the movie *21* with Kevin Spacey where his attention (as the
 
 ## Getting the assumptions right
 Before we start, it is important to note which are the assumptations my approach is based on. It's these three (as on Wikipedia):
-* The host opens another door than the one picked by the contestant
-* The door opened by the host must always reveal a goat
-* The contestant is offered the possibility to switch their initial choice
+* The host opens another door than the one picked by the contestant.
+* The door opened by the host must always reveal a goat.
+* The contestant is offered the possibility to switch their initial choice.
 
 ## One more assumption
 I am adding one more assumption that the contestant should make to understand their game better.
@@ -34,7 +34,7 @@ This is a very important point and an assumption fair to make. We know there are
 Now the gameshow master opens another door with a goat. And he asks you whether or not you want to overthink your initial choice and would like to pick the other, remaining door. You should. And here's why:
 * One goat has been definitively eliminated by the gameshow master.
 * The other one **you have already picked** with that 66.6% probability (at least that's what you **have to** assume).
-* You must leave the sinking ship -  as currently, you have to assume that the two goats have been picked by the gameshow master and you.
+* You must leave the sinking ship &mdash; as currently, you have to assume that the two goats have been picked by the gameshow master and you.
 
 ## Let's confuse this a little
 Initially I thought that after the first goat is revealed, the game is kind of reset. Because immediately after that, there are two doors left with one having the prize and one having a goat behind them. So the odds must be 50/50 then, because you can decide for either door. However **that is not correct** because this ignores what happened before.
